@@ -36,7 +36,7 @@ Oon sen verran noobie wiresharkin kanssa että hyvä jos jotain saa tästä siep
 
 ### Minkä merkkinen verkkokortti?
 
-Sen tiedon luulisi löytyvän Ethernet layeriltä, mutta näyttää vaan `Ethernet II, src: 52:54:00:2f:e1:e5` 
+Sen tiedon luulisi löytyvän Ethernet-kohdasta, mutta näyttää vaan `Ethernet II, src: 52:54:00:2f:e1:e5` 
 
 <img width="1832" height="696" alt="image" src="https://github.com/user-attachments/assets/14ce2fac-1898-40e2-9daf-b596f1f0252f" />
 
@@ -45,6 +45,22 @@ Sen tiedon luulisi löytyvän Ethernet layeriltä, mutta näyttää vaan `Ethern
 Näkyy että terokarvinen.comissa on käyty:
 
 <img width="1812" height="176" alt="image" src="https://github.com/user-attachments/assets/c69af0ae-feed-4dae-bb3e-7749f13af339" />
+
+## Oman liikenteen analyysi
+
+Pistin wiresharkin tallentamaan liikennettä ja otin vain selaimen esiin taustalta, enkä edes klikannut mitään niin tämmösiä QUIC-protokollia alkoi jo satelemaan.
+
+<img width="1812" height="176" alt="image" src="https://github.com/user-attachments/assets/6a81f824-5a44-46c0-9b6f-36bf10184811" />
+
+[Tämän](https://www.auvik.com/franklyit/blog/what-is-quic-protocol/) lähteen mukaan on siis joku Googlen kehittämä nopea vaihtoehto TCP-protokollalle nettiselaimilla. 
+Näkyy myös, että HTTPS yhteydestä on kysymys, kun portti 443 on kyseessä:
+
+<img width="907" height="321" alt="image" src="https://github.com/user-attachments/assets/6e0fe865-008e-49de-936c-26e4d72c1478" />
+
+QUIC-protokollalla on kuitenkin jonkin sortin handshaket:
+
+<img width="917" height="229" alt="image" src="https://github.com/user-attachments/assets/575be4e6-3913-4e8c-8083-fc2515a98477" />
+
 
 
 ## Lähteet
@@ -55,3 +71,6 @@ https://terokarvinen.com/network-interface-linux/
 
 https://terokarvinen.com/wireshark-getting-started/
 
+https://www.auvik.com/franklyit/blog/what-is-quic-protocol/
+
+https://docs.google.com/document/d/1g5nIXAIkN_Y-7XJW5K45IblHd_L2f5LTaDUDwvZ5L6g/edit?pli=1&tab=t.0
