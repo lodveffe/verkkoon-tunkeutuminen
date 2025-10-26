@@ -26,6 +26,8 @@ Neljä kerrosta TCP/IP-mallista:
 
 <img width="913" height="81" alt="image" src="https://github.com/user-attachments/assets/baae108c-c46b-4d54-9f4b-02be79fbd665" />
 
+[Wikipediasta](https://en.wikipedia.org/wiki/Internet_protocol_suite) kun luntataan, niin nähdään että Application layeristä löytyy TLS eli Transport Layer Security, Transport layerista itse TCP eli Transmission Control Protocol, Internet layerista IPv4, ja Link layeristä Ethernet. Jokaisesta TCP/IP-mallin kerroksesta löytyi jotain.
+
 ## Mitäs tuli surffattua?
 
 Oon sen verran noobie wiresharkin kanssa että hyvä jos jotain saa tästä sieppauksesta selvää. Nooh katotaan.
@@ -36,7 +38,7 @@ Oon sen verran noobie wiresharkin kanssa että hyvä jos jotain saa tästä siep
 
 ### Minkä merkkinen verkkokortti?
 
-Sen tiedon luulisi löytyvän Ethernet-kohdasta, mutta näyttää vaan `Ethernet II, src: 52:54:00:2f:e1:e5` 
+Sen tiedon luulisi löytyvän Ethernet-kohdasta, mutta näyttää vaan `Ethernet II, src: 52:54:00:2f:e1:e5` Jos joku mua älykkäämpi ristiinarvioija osaa kertoa palauteosiossa mistä se merkki löytyy niin olisi jees.
 
 <img width="1832" height="696" alt="image" src="https://github.com/user-attachments/assets/14ce2fac-1898-40e2-9daf-b596f1f0252f" />
 
@@ -60,8 +62,7 @@ Näkyy myös, että HTTPS yhteydestä on kysymys, kun portti 443 on kyseessä:
 QUIC-protokollalla on kuitenkin jonkin sortin handshaket:
 
 <img width="917" height="229" alt="image" src="https://github.com/user-attachments/assets/575be4e6-3913-4e8c-8083-fc2515a98477" />
-
-
+ 
 
 ## Lähteet
 
@@ -74,3 +75,5 @@ https://terokarvinen.com/wireshark-getting-started/
 https://www.auvik.com/franklyit/blog/what-is-quic-protocol/
 
 https://docs.google.com/document/d/1g5nIXAIkN_Y-7XJW5K45IblHd_L2f5LTaDUDwvZ5L6g/edit?pli=1&tab=t.0
+
+https://en.wikipedia.org/wiki/Internet_protocol_suite
