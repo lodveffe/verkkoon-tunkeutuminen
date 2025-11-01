@@ -15,9 +15,14 @@ Timanttimallin ideana on helpottaa kyberhyökkäysten analysointia keräämäll�
     sudo apt-get update
     sudo apt-get install apache2
     sudo systemctl start apache2
-
+    curl localhost
+    
 <img width="676" height="82" alt="image" src="https://github.com/user-attachments/assets/96ede5a1-7131-4695-83b1-1c417fec2893" />
 
+[Apachen docseista](https://httpd.apache.org/docs/2.4/logs.html
+) löytyy infot, kuinka näitä tulkitaan.
+Eli ensimmäiseksi on hostin ip-osoite. Mulla näkyi tuossa `::1` 127.0.0.1 sijaan, eli IPv6 localhost-osoite. (Stackoverflow).
+Sen perässä ensimmäinen `-` meinaa Apache docsien mukaan, että "_information is not available_". Tässä voisi olla `-` sijaan `RFC 1413` identiteetti ilmoitettuna, mutta oletuksena Apache ei tätä koita edes selvittää, sillä tulos on epäluotettava. [Täältä](https://www.rfc-editor.org/rfc/rfc1413) löytyy lisää `RFC1413`:sta.
 
 ## b)
 
@@ -28,6 +33,13 @@ Timanttimallin ideana on helpottaa kyberhyökkäysten analysointia keräämäll�
 
 <img width="1427" height="535" alt="image" src="https://github.com/user-attachments/assets/6c464d38-ea48-4c09-b74e-f6990fdc726b" />
 
+## e)
+
+Wiresharkissa kun iskee tuohon yleiseen filtterikohtaan "nmap", niin ei saada tulosta, joten täytyy mennä `edit` -> `find packet`. Sitten voi valita hakutavaksi merkkijonon ja hakea "nmap".
+
+<img width="1846" height="823" alt="image" src="https://github.com/user-attachments/assets/53345ee9-7638-44e9-9688-6893bb699ae5" />
+
+
 
 <img width="644" height="82" alt="image" src="https://github.com/user-attachments/assets/c81ea86e-691b-4237-ba28-1cf3dc3f1539" />
 
@@ -37,3 +49,9 @@ Timanttimallin ideana on helpottaa kyberhyökkäysten analysointia keräämäll�
 https://kravensecurity.com/diamond-model-analysis/
 
 https://detect-respond.blogspot.com/2013/03/the-pyramid-of-pain.html
+
+https://httpd.apache.org/docs/2.4/logs.html
+
+https://stackoverflow.com/questions/25608220/what-does-1-mean-in-apache-logs
+
+https://www.rfc-editor.org/rfc/rfc1413
