@@ -22,7 +22,14 @@ Timanttimallin ideana on helpottaa kyberhyökkäysten analysointia keräämäll�
 [Apachen docseista](https://httpd.apache.org/docs/2.4/logs.html
 ) löytyy infot, kuinka näitä tulkitaan.
 Eli ensimmäiseksi on hostin ip-osoite. Mulla näkyi tuossa `::1` 127.0.0.1 sijaan, eli IPv6 localhost-osoite. (Stackoverflow).
+
 Sen perässä ensimmäinen `-` meinaa Apache docsien mukaan, että "_information is not available_". Tässä voisi olla `-` sijaan `RFC 1413` identiteetti ilmoitettuna, mutta oletuksena Apache ei tätä koita edes selvittää, sillä tulos on epäluotettava. [Täältä](https://www.rfc-editor.org/rfc/rfc1413) löytyy lisää `RFC1413`:sta.
+
+Seuraavaksi on taas `-`. Tässä olisi muuten näkyvillä HTTP-autentikoitu `userid`, mutta koska sivu ei ole salasanan takana, niin se kohta jää myös tyhjäksi. 
+
+Tähän väliin aikaleima.
+
+Aikaleiman jälkeen heittomerkkien sisällä on tärkeää tietoa asiakkaan pyynnöstä palvelimelta. [W3Schoolssista](https://www.w3schools.com/tags/ref_httpmethods.asp) kävin muistuttamassa itseäni HTTP:sta. `GET` on HTTP-metodi, joka pyytää saada vastaanottaa dataa palvelimelta
 
 ## b)
 
