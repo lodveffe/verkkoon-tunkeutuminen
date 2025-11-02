@@ -29,7 +29,7 @@ Seuraavaksi on taas `-`. Tässä olisi muuten näkyvillä HTTP-autentikoitu `use
 
 Tähän väliin aikaleima.
 
-Aikaleiman jälkeen heittomerkkien sisällä on tärkeää tietoa asiakkaan pyynnöstä palvelimelta. [W3Schoolssista](https://www.w3schools.com/tags/ref_httpmethods.asp) kävin muistuttamassa itseäni HTTP:sta. `GET` on HTTP-metodi, joka pyytää saada vastaanottaa dataa palvelimelta
+Aikaleiman jälkeen heittomerkkien sisällä on tärkeää tietoa asiakkaan pyynnöstä palvelimelta. [W3Schoolssista](https://www.w3schools.com/tags/ref_httpmethods.asp) kävin muistuttamassa itseäni HTTP:sta. `GET` on HTTP-metodi, joka pyytää saada vastaanottaa dataa palvelimelta. Koska hain pelkällä localhostilla, niin pyyntö tuli suoraan juureen, eli sitä meinaa tuo `/` GETin perässä. 
 
 ## b)
 
