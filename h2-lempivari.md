@@ -64,9 +64,11 @@ Wiresharkissa kun iskee tuohon yleiseen filtterikohtaan "nmap", niin ei saada tu
 
 <img width="1846" height="823" alt="image" src="https://github.com/user-attachments/assets/53345ee9-7638-44e9-9688-6893bb699ae5" />
 
+Lähdin googlailemaan tuota nmaplowercheckiä, mutten saanut mitään järkevää vastausta, joten oli pakko käänyty tekoälyn puoleen. ChatGPT vastasi, että se on NSE:n tapa tsekata palvelimen käyttäytyminen olemattomien URI:en kanssa luomalla juuri näitä /nmaplowercheckliibalaaba12345 yms. (ChatGPT 2025)
+
+## f) _Net grep_
 
 
-<img width="644" height="82" alt="image" src="https://github.com/user-attachments/assets/c81ea86e-691b-4237-ba28-1cf3dc3f1539" />
 
 
 ## Lähteet
