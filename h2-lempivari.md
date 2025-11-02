@@ -10,7 +10,7 @@ David J. Biancon Tuskan pyramidi kertoo, mihin kannattaa keskittyä tuottaakseen
 
 Timanttimallin ideana on helpottaa kyberhyökkäysten analysointia keräämällä tietoa timantin joka kulmasta; hyökkääjästä, kyvykkyydestä, infrasta ja uhrista. Näihin kohtiin kun täyttää mahdollisimman paljon tietoa ja yhdistelee timantin kulmia, niin johan alkaa hommat ratkeamaan. Tällä mallilla kiinnitetään huomiota juurikin isompaan kontekstiin, eikä yksittäisiin havantoihin. Tai paremmin sanottuna tällä saadaan ne yksittäiset havainnot paremmin kontekstiin. 
 
-## a)
+## a) _Apache.log_
 
     sudo apt-get update
     sudo apt-get install apache2
@@ -29,18 +29,36 @@ Seuraavaksi on taas `-`. Tässä olisi muuten näkyvillä HTTP-autentikoitu `use
 
 Tähän väliin aikaleima.
 
-Aikaleiman jälkeen heittomerkkien sisällä on tärkeää tietoa asiakkaan pyynnöstä palvelimelta. [W3Schoolssista](https://www.w3schools.com/tags/ref_httpmethods.asp) kävin muistuttamassa itseäni HTTP:sta. `GET` on HTTP-metodi, joka pyytää saada vastaanottaa dataa palvelimelta. Koska hain pelkällä localhostilla, niin pyyntö tuli suoraan juureen, eli sitä meinaa tuo `/` GETin perässä. 
+Aikaleiman jälkeen heittomerkkien sisällä on tärkeää tietoa asiakkaan pyynnöstä palvelimelta. [W3Schoolssista](https://www.w3schools.com/tags/ref_httpmethods.asp) kävin muistuttamassa itseäni HTTP:sta. `GET` on HTTP-metodi, joka pyytää saada vastaanottaa dataa palvelimelta. Koska hain pelkällä localhostilla, niin pyyntö tuli suoraan juureen, eli sitä meinaa tuo `/` GETin perässä. Tätä seuraa tieto HTTP-versiosta, joka on tässä 1.1.
 
-## b)
+Statuskoodi 200 tarkoittaa, että kaikki OK.
+
+Statuskoodin jälkeen näkyy palautetun datan koko tavuina.
+
+Lopuksi kerrotaan vielä mistä asiakas saapui. Koska hain sivua suoraan enkä tullut minkään linkin kautta, niin mulla näkyi siinä `"-"`. `curl / 8.15.0` kertoo mistä browserista pyyntö tuli.
+
+
+## b) _Nmapped_
 
 <img width="1198" height="389" alt="image" src="https://github.com/user-attachments/assets/28c18e9a-6ee1-49b6-8634-c6a443cac8cb" />
 
+Näkyy ketä skannattiin eli localhost 127.0.0.1 ja sen toinen osoite eli ipv6-versio ::1. 
+Defaulttiskannilla nmap skannaa 1000 yleisintä TCP-porttia ja portti 80 on ainoa auki oleva ja loput kiinni, joten nmap ilmoittaa tämän myös. Sieltä nähään että kyseessä on Apache Debiaanille.
+Kun -A eli aggressiivinen skannaus oli päällä, niin nähdään tietoa käyttöjärjestelmästä. Lopuksi vielä infoa siitä, kuinka monen reitittimen läpi paketit ovat käyneet läpi.
 
-## d)
+
+## c) _Skriptit_
+
+-A meinaa Aggressive, eli tällä skannauksella nmap lisäsi hakuun OS-detectionin, version detectionin sekä Nmap Scripting Enginen eli NSE:n ja vielä tracerouten. (Nmap 2025)
+
+
+## d) _Jäljet lokissa_
 
 <img width="1427" height="535" alt="image" src="https://github.com/user-attachments/assets/6c464d38-ea48-4c09-b74e-f6990fdc726b" />
 
-## e)
+Nmap Scripting Engine on selkeästi tehnyt HTTP-pyyntöjä palvelimelle. Siksi näkyvät selkeästi lokeissa. Jos lokit olisivat massiiviset, niin piipusta `|` ja `grep`istä olisi hyötyä.
+
+## e) _Wire sharking_
 
 Wiresharkissa kun iskee tuohon yleiseen filtterikohtaan "nmap", niin ei saada tulosta, joten täytyy mennä `edit` -> `find packet`. Sitten voi valita hakutavaksi merkkijonon ja hakea "nmap".
 
@@ -62,3 +80,5 @@ https://httpd.apache.org/docs/2.4/logs.html
 https://stackoverflow.com/questions/25608220/what-does-1-mean-in-apache-logs
 
 https://www.rfc-editor.org/rfc/rfc1413
+
+https://nmap.org/book/port-scanning-tutorial.html
